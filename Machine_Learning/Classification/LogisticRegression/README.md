@@ -16,9 +16,10 @@ types of the dependent variable, such as "cat", "dogs", or "sheep".
 - **Ordinal:** In ordinal Logistic regression, there can be 3 or more possible ordered types of
 dependent variables, such as "Iow , Medium", or "High"
 
-### Sigmoid Function
-
+## Sigmoid Function
 Logistic Regression works on Sigmoid Function
+
+Sigmoid follows **Binary Class Classification**
 
     y = 1 / (1 + e^-x)
 where:
@@ -27,3 +28,37 @@ where:
 - e (Euler's Constant) = -2.71828
 
 ![image.png](sigmoid.png)
+
+
+## **OVR (One-Versus-Rest) Method**  
+The **One-Versus-Rest (OVR)** method is a classification strategy used in multi-class classification problems. Instead of treating all classes simultaneously, it breaks down the multi-class problem into multiple binary classification problems.
+
+#### **How It Works:**  
+1. Suppose you have \(N\) classes.  
+2. For each class \(i\), a separate binary classifier is trained to distinguish between:
+   - **Class \(i\)** (as positive)
+   - **All other classes** (as negative)  
+3. At inference, each classifier outputs a probability or score, and the class with the highest score is chosen.
+
+#### **Example:**
+If we have three classes (A, B, and C), we create three binary classifiers:
+- Classifier 1: A vs. (B and C)
+- Classifier 2: B vs. (A and C)
+- Classifier 3: C vs. (A and B)  
+At prediction time, we take the classifier that outputs the highest probability.
+
+
+## **Softmax Function**  
+The **Softmax function** is commonly used in multi-class classification problems where the goal is to output probabilities over multiple classes.
+
+---
+
+### **OVR vs. Softmax**
+| Feature | OVR | Softmax |
+|---------|----|--------|
+| **Approach** | Multiple binary classifiers | Single multi-class classifier |
+| **Output** | Multiple independent scores | Probability distribution |
+| **Computation** | Slower (requires \(N\) models) | Faster (single model) |
+| **Use Case** | Works well with SVMs, logistic regression | Common in neural networks |
+
+---
