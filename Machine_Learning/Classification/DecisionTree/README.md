@@ -10,6 +10,16 @@
 
 ---
 
+## How Decision Tree Works
+
+1. Start with the entire dataset as the root.
+2. Select the best feature to split the data based on a splitting criterion (e.g., Gini, Entropy, MSE).
+3. Create child nodes and assign data points accordingly.
+4. Repeat the process recursively until stopping criteria are met (e.g., max depth, min samples per leaf).
+5. Make predictions:
+- For classification, return the most common class in the leaf.
+- For regression, return the average value.
+
 ## **Pruning**  
 When a **Decision Tree** becomes too large, it may lead to **overfitting.**  
 To prevent this, we use **Pruning**, which removes unnecessary branches or sub-nodes.  
@@ -63,7 +73,7 @@ Where:
 
 ---
 
-### **Conclusion**  
+## **Conclusion**  
 - Decision Trees are powerful for classification problems but require techniques like **pruning** to prevent overfitting.  
 - The **best split** is determined using **Entropy, Information Gain, or Gini Index**, prioritizing **low impurity and high information gain.**
 
