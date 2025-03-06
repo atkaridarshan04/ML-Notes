@@ -2,7 +2,8 @@
 
 Bagging is an **ensemble learning technique** that improves model stability and accuracy by reducing **variance** and preventing **overfitting**. It involves training multiple models on **random subsets (bags)** of the original dataset and aggregating their predictions.  
 
-![Bagging](./Bagging.png)
+
+![Bagging](./Bagging.webp)
 
 ---
 
